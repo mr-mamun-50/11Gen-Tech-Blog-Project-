@@ -11,18 +11,20 @@ if (isset($_POST['add_cat'])) {
 <form action="" method="POST">
     <div class="form-group">
         <label class=" mb-1" for="cat_name">Category Name</label>
-        <input name="cat_name" class="form-control py-4" id="cat_name" type="text" />
+        <input name="cat_name" class="form-control py-4" id="cat_name" type="text" required />
     </div>
     <div class="form-group">
         <label class=" mb-1" for="cat_des">Category Description</label>
-        <input name="cat_desc" class="form-control py-4" id="cat_des" type="text" />
+        <input name="cat_desc" class="form-control py-4" id="cat_des" type="text" required />
     </div>
     <input name="add_cat" type="submit" value="Add Category" class="form-control btn btn-primary btn_block">
 
 </form>
 
-<?php
-if (isset($return_msg)) {
-    echo $return_msg;
-}
-?>
+<?php if (isset($return_msg)) { ?>
+
+    <div class="alert alert-success mt-2 text-center" role="alert">
+        <?php echo $return_msg; ?>
+    </div>
+
+<?php } ?>

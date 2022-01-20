@@ -58,4 +58,23 @@ class adminBlog
             return "Category Added Successfully";
         }
     }
+
+    public function display_category()
+    {
+        $query = "SELECT * FROM category";
+
+        if (mysqli_query($this->conn, $query)) {
+            $category = mysqli_query($this->conn, $query);
+            return $category;
+        }
+    }
+
+    public function delete_category($id)
+    {
+        $query = "DELETE FROM category WHERE cat_id=$id";
+
+        if (mysqli_query($this->conn, $query)) {
+            return "Category Deleted Seccessfully";
+        }
+    }
 }
