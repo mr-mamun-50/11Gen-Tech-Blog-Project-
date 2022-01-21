@@ -77,4 +77,23 @@ class adminBlog
             return "Category Deleted Seccessfully";
         }
     }
+
+    public function add_post($data)
+    {
+        $post_title = $data['post_title'];
+        $post_content = $data['post_content'];
+        $post_img = $_FILES['post_img']['name'];
+        $post_img_tmp = $_FILES['post_img']['tmp_name'];
+        $post_category = $data['post_category'];
+        $post_summary = $data['post_summary'];
+        $post_tag = $data['post_tag'];
+        $post_status = $data['post_status'];
+
+        $query = "INSERT INTO posts(post_title, post_content, post_img, post_ctg, post_author, post_date, post_comment_cnt, post_summary, post_tag, post_status) VALUES('$post_title', '$post_content', '$post_img', $post_category, 'Mamunur Rashid Mamun', now(), 3, '$post_summary', '$post_tag', $post_status)";
+
+        if (mysqli_query($this->conn, $query)) {
+            move_uploaded_file($post_img_tmp, '../uploads/' . $post_img);
+            return "Post Added Successfully";
+        }
+    }
 }
