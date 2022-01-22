@@ -17,8 +17,11 @@ if (isset($_GET['status'])) {
 
 <?php if (isset($dltMsg)) { ?>
 
-    <div class="alert alert-danger my-2 text-center" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show my-2 text-center" role="alert">
         <?php echo $dltMsg; ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 
 <?php } ?>

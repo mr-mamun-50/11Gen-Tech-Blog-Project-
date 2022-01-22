@@ -5,12 +5,16 @@
         </div>
         <div class="content">
             <ul>
-                <li><a href="#">- Nature Lifestyle</a></li>
-                <li><a href="#">- Awesome Layouts</a></li>
-                <li><a href="#">- Creative Ideas</a></li>
-                <li><a href="#">- Responsive Templates</a></li>
-                <li><a href="#">- HTML5 / CSS3 Templates</a></li>
-                <li><a href="#">- Creative &amp; Unique</a></li>
+
+                <?php while ($category = mysqli_fetch_assoc($getCat)) { ?>
+
+                    <li>
+                        <a>-
+                            <?php echo $category['cat_name'] ?>
+                        </a>
+                    </li>
+
+                <?php } ?>
             </ul>
         </div>
     </div>

@@ -36,7 +36,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            11Gen Tech
+            M R Mamun
         </div>
     </nav>
 </div>

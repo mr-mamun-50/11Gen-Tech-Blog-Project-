@@ -96,4 +96,58 @@ class adminBlog
             return "Post Added Successfully";
         }
     }
+
+    public function display_posts()
+    {
+        $query = "SELECT * FROM post_with_ctg";
+
+        if (mysqli_query($this->conn, $query)) {
+            $posts = mysqli_query($this->conn, $query);
+            return $posts;
+        }
+    }
+
+    public function display_posts_public()
+    {
+        $query = "SELECT * FROM post_with_ctg WHERE post_status=1";
+
+        if (mysqli_query($this->conn, $query)) {
+            $posts = mysqli_query($this->conn, $query);
+            return $posts;
+        }
+    }
+
+    public function delete_posts($id)
+    {
+        $query = "DELETE FROM posts WHERE post_id=$id";
+
+        if (mysqli_query($this->conn, $query)) {
+            return "Post Deleted Seccessfully";
+        }
+    }
+
+    public function edit_thumb($data)
+    {
+        $id = $data['edit_img_id'];
+        $img_name = $_FILES['change_img']['name'];
+        $img_tmp = $_FILES['change_img']['tmp_name'];
+
+        $query = "UPDATE posts SET post_img='$img_name' WHERE post_id='$id'";
+
+        if (mysqli_query($this->conn, $query)) {
+            move_uploaded_file($img_tmp, '../uploads/' . $img_name);
+            return "Thumbnail Updated Successfully";
+        }
+    }
+
+    public function get_post_info($id)
+    {
+        $query = "SELECT * FROM post_with_ctg WHERE post_id='$id'";
+
+        if (mysqli_query($this->conn, $query)) {
+            $post_info = mysqli_query($this->conn, $query);
+            $post = mysqli_fetch_assoc($post_info);
+            return $post;
+        }
+    }
 }
