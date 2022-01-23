@@ -17,7 +17,7 @@ $posts = $obj->display_posts_public();
                         </div>
                         <div class="down-content">
                             <span><?php echo $post['cat_name']; ?></span>
-                            <a href="post-details.html">
+                            <a href="single_post_view.php?view=single_post_view&&id=<?php echo $post['post_id']; ?>">
                                 <h4><?php echo $post['post_title']; ?></h4>
                             </a>
                             <ul class="post-info">

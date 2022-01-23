@@ -6,6 +6,9 @@ if (isset($_GET['status'])) {
         $post_data = $obj->get_post_info($id);
     }
 }
+if (isset($_POST['update_post'])) {
+    $return_msg = $obj->update_post($_POST);
+}
 
 ?>
 
@@ -28,6 +31,10 @@ if (isset($_GET['status'])) {
         <div class="form-group">
             <label class=" mb-1" for="change_title">New Title</label>
             <input value="<?php echo $post_data['post_title'] ?>" name="change_title" class="form-control" id="change_title" type="text" required />
+        </div>
+        <div class="form-group">
+            <label class=" mb-1" for="change_summary">New Summary</label>
+            <input value="<?php echo $post_data['post_summary'] ?>" name="change_summary" class="form-control" id="change_summary" type="text" required />
         </div>
         <div class="form-group">
             <label class=" mb-1" for="change_content">New Content</label>

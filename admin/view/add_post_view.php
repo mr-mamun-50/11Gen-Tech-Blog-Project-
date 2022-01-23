@@ -28,15 +28,6 @@ if (isset($_POST['add_post'])) {
             <input name="post_title" class="form-control py-2" id="post_title" type="text" required />
         </div>
         <div class="form-group">
-            <label class=" mb-1" for="post_content">Content</label>
-            <textarea name="post_content" class="form-control" id="post_content" cols="30" rows="10"></textarea>
-        </div>
-        <div class="form-group">
-            <label class=" mb-1" for="post_img">Upload Thumbnail</label>
-            <input name="post_img" class="form-control-file" id="post_img" type="file" required />
-        </div>
-
-        <div class="form-group">
             <label for="post_category">Select Post Category</label>
             <select id="post_category" class="form-control" name="post_category">
 
@@ -48,6 +39,14 @@ if (isset($_POST['add_post'])) {
 
                 <?php } ?>
             </select>
+        </div>
+        <div class="form-group">
+            <label class=" mb-1" for="post_content">Content</label>
+            <textarea name="post_content" class="form-control" id="post_content" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <label class=" mb-1" for="post_img">Upload Thumbnail</label>
+            <input name="post_img" class="form-control-file" id="post_img" type="file" required />
         </div>
         <div class="form-group">
             <label class="mb-1" for="post_summary">Summary</label>

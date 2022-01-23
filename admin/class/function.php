@@ -150,4 +150,18 @@ class adminBlog
             return $post;
         }
     }
+
+    public function update_post($data)
+    {
+        $post_id = $data['edit_post_id'];
+        $change_title = $data['change_title'];
+        $change_content = $data['change_content'];
+        $change_summary = $data['change_summary'];
+
+        $query = "UPDATE posts SET post_title='$change_title',post_summary='$change_summary',post_content='$change_content' WHERE post_id='$post_id'";
+
+        if (mysqli_query($this->conn, $query)) {
+            return "Post Updated Successfully!";
+        }
+    }
 }
