@@ -13,7 +13,7 @@
                     <?php while ($category = mysqli_fetch_assoc($getCat)) { ?>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <?php echo $category['cat_name'] ?>
                             </a>
                         </li>
@@ -21,7 +21,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="index.php">Contact Us</a>
                     </li>
 
                 </ul>
